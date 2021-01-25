@@ -10,6 +10,13 @@ import UIKit
 class CharactersViewController: UIViewController {
 
     @IBOutlet weak var charactersTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    let charactersRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
     
     let viewModel: CharactersViewModel
     
@@ -30,6 +37,10 @@ class CharactersViewController: UIViewController {
         title = "Marvel Super Heroes"
         accessibilityLabel = "Marvel Super Heroes"
         
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        charactersTableView.refreshControl = charactersRefreshControl
+        
         charactersTableView.register(UINib(nibName: "CharacterTableViewCell", bundle: nil), forCellReuseIdentifier: "CharacterTableViewCell")
         charactersTableView.rowHeight = 60
         charactersTableView.dataSource = self
@@ -41,6 +52,10 @@ class CharactersViewController: UIViewController {
     fileprivate func showErrorFetchingCharactersAlert() {
         let alertMessage: String = NSLocalizedString("Error fetching Marvel Characters\nPlease try again later", comment: "")
         showAlert(alertMessage)
+    }
+    @objc fileprivate func pullToRefresh(sender: UIRefreshControl) {
+        viewModel.fetchCharactersAndReloadUI()
+        sender.endRefreshing()
     }
 }
 
@@ -69,10 +84,12 @@ extension CharactersViewController: UITableViewDelegate {
 extension CharactersViewController: CharactersViewModelViewDelegate {
     func charactersFetched() {
         charactersTableView.reloadData()
+        activityIndicator.stopAnimating()
     }
     
     func errorFetchingCharacters() {
         showErrorFetchingCharactersAlert()
+        activityIndicator.stopAnimating()
     }
 }
 

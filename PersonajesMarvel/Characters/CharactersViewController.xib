@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersViewController" customModule="PersonajesMarvel" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="a1j-Lv-Gok" id="fGV-Qk-ONs"/>
                 <outlet property="charactersTableView" destination="MOF-CY-rHZ" id="eJa-z7-VPA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,13 +24,18 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="a1j-Lv-Gok">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="MOF-CY-rHZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4CV-nQ-ttf"/>
+                <constraint firstItem="a1j-Lv-Gok" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LKO-Da-NBK"/>
                 <constraint firstItem="MOF-CY-rHZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SAl-Ul-UgO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MOF-CY-rHZ" secondAttribute="trailing" id="Vfk-hC-VaR"/>
+                <constraint firstItem="a1j-Lv-Gok" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="imH-xF-T6c"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MOF-CY-rHZ" secondAttribute="bottom" id="tWK-Zw-95D"/>
             </constraints>
             <point key="canvasLocation" x="-146.37681159420291" y="-21.428571428571427"/>

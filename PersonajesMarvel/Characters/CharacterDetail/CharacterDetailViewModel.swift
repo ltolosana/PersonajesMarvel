@@ -32,6 +32,10 @@ class CharacterDetailViewModel {
     }
     
     func viewDidLoad() {
+        fetchCharacterAndReloadUI()
+    }
+    
+    func fetchCharacterAndReloadUI() {
         characterDetailDataManager.fetchCharacter(characterId: characterId) { [weak self] (result) in
             switch result {
             case .success(let character):
@@ -57,6 +61,5 @@ class CharacterDetailViewModel {
                 self?.viewDelegate?.errorFetchingCharacterDetail()
             }
         }
-        
     }
 }

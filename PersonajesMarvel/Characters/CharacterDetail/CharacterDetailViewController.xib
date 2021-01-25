@@ -16,6 +16,8 @@
                 <outlet property="characterImageView" destination="T5s-Ss-gQE" id="91N-Zg-lJw"/>
                 <outlet property="characterSeriesLabel" destination="pui-7O-e0b" id="hNv-OZ-lfC"/>
                 <outlet property="characterStoriesLabel" destination="s0a-Po-1DB" id="tcc-9C-Qf8"/>
+                <outlet property="detailActivityIndicator" destination="0Ix-KB-ZeE" id="Svq-Uh-eVm"/>
+                <outlet property="detailScrollView" destination="u1Y-bz-fm2" id="zw3-Gl-T4Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -97,9 +99,13 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0Ix-KB-ZeE">
+                            <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                        </activityIndicatorView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="IcW-Om-l4Y" secondAttribute="trailing" constant="32" id="13s-bN-O2f"/>
+                        <constraint firstItem="0Ix-KB-ZeE" firstAttribute="centerY" secondItem="u1Y-bz-fm2" secondAttribute="centerY" id="1Tg-RN-DeK"/>
                         <constraint firstItem="aOL-30-5gw" firstAttribute="leading" secondItem="u1Y-bz-fm2" secondAttribute="leading" constant="32" id="2hv-it-HGq"/>
                         <constraint firstAttribute="trailing" secondItem="pui-7O-e0b" secondAttribute="trailing" constant="32" id="32K-Oi-Ac8"/>
                         <constraint firstAttribute="trailing" secondItem="e9f-YD-9fq" secondAttribute="trailing" constant="16" id="5Ah-c1-arD"/>
@@ -130,6 +136,7 @@
                         <constraint firstItem="pui-7O-e0b" firstAttribute="leading" secondItem="u1Y-bz-fm2" secondAttribute="leading" constant="32" id="jXt-kE-xJV"/>
                         <constraint firstItem="UNB-wP-VR9" firstAttribute="top" secondItem="e9f-YD-9fq" secondAttribute="bottom" constant="8" id="kMt-UT-j2W"/>
                         <constraint firstItem="s0a-Po-1DB" firstAttribute="leading" secondItem="u1Y-bz-fm2" secondAttribute="leading" constant="32" id="kRD-CZ-OSe"/>
+                        <constraint firstItem="0Ix-KB-ZeE" firstAttribute="centerX" secondItem="u1Y-bz-fm2" secondAttribute="centerX" id="khV-fZ-aHr"/>
                         <constraint firstItem="s0a-Po-1DB" firstAttribute="top" secondItem="Lu5-X9-m6N" secondAttribute="bottom" constant="8" id="lld-lB-E3v"/>
                         <constraint firstItem="2ec-vc-XZu" firstAttribute="top" secondItem="u1Y-bz-fm2" secondAttribute="top" id="nAy-S2-D2I"/>
                         <constraint firstItem="cFC-oc-IdT" firstAttribute="top" secondItem="aOL-30-5gw" secondAttribute="bottom" constant="16" id="oJf-h2-O3h"/>
